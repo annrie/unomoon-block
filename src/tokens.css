@@ -1,0 +1,325 @@
+:root {
+  /* Metal plate look */
+  --plate-top: rgba(255,255,255,.45);
+  --plate-mid: rgba(255,255,255,.18);
+  --plate-bot: rgba(0,0,0,.08);
+  --metal-grad-y: linear-gradient(to bottom,
+    var(--plate-top) 0%,
+    var(--plate-mid) 45%,
+    transparent 55%,
+    var(--plate-bot) 100%
+  );
+  --metal-grad-x: linear-gradient(to right,
+    rgba(255,255,255,.06),
+    rgba(0,0,0,.06),
+    rgba(255,255,255,.06)
+  );
+  --metal-inset: inset 0 1px 0 rgba(255,255,255,.35), inset 0 -1px 0 rgba(0,0,0,.12);
+  --metal-outer: 0 1px 2px rgba(0,0,0,.08);
+
+  /* 見出しトークン（heading01〜13系が参照） */
+  --hd01-fg: #655;          --hd01-bg: #eee;     --hd01-b1: #aaa;  --hd01-b2: #aaa;
+  --hd01-border: #aaa;
+  --hd01-shadow-inset: inset 0 0 5px rgba(0,0,0,.1);
+  --hd01-text-shadow: 1px 1px 0 rgba(255,255,255,1);
+
+  --hd02-fs: 1.5rem;
+  --hd02-fg: #333;
+  --hd02-bg: lightsalmon;
+  --hd02-border: transparent;
+  --hd02-text-shadow: 1px 1px 0 rgba(255,255,255,1);
+  --hd02-shadow: 0 1px 2px 0 rgba(0,0,0,0.5),
+                 30px 0 0 0 var(--hd02-bg),
+                 -30px 0 0 0 var(--hd02-bg);
+
+  --hd03-fs: 1.75rem;
+  --hd03-fg: #ffe8e8;
+  --hd03-bg: #f99;
+  --hd03-gradient: linear-gradient(
+    to bottom,
+    transparent 8%,
+    rgba(255,255,255,0.5) 8%,
+    rgba(255,255,255,0.5) 12%,
+    transparent 12%,
+    transparent 88%,
+    rgba(255,255,255,0.5) 88%,
+    rgba(255,255,255,0.5) 92%,
+    transparent 92%
+  );
+  --hd03-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+  --hd03-before-border-b: #c66;
+  --hd03-after-border-t: #c66;
+
+  --hd03-2-fs: 1.25rem;
+  --hd03-2-fg: #fff;
+  --hd03-2-bg: #555;
+  --hd03-2-shadow: 0 1px 3px #777;
+  --hd03-2-triangle: #333;
+
+  --hd04-fs: 1.25rem;
+  --hd04-fg: #333;
+  --hd04-bg: #fff;
+  --hd04-border: #333;
+  --hd04-shadow: inset -7px -5px 0 0 #e8e8e8, 2px 3px 0 0 #000;
+  --hd04-triangle-top: var(--hd04-border);
+  --hd04-triangle-bottom: #e8e8e8;
+
+  --hd04-2-fs: 1.25rem;
+  --hd04-2-fg: #fff;
+  --hd04-2-text-shadow: 1px 1px 1px #000;
+  --hd04-2-bg: #777;
+  --hd04-2-border: #777;
+  --hd04-2-triangle: var(--hd04-2-border);
+
+  --hd04-3-fs: 1rem;
+  --hd04-3-fg: #111;
+  --hd04-3-bg: #fff;
+  --hd04-3-border: #555;
+  --hd04-3-notch-outer: var(--hd04-3-border);
+  --hd04-3-notch-inner: var(--hd04-3-bg);
+
+  --hd05-fs: 2rem;
+  --hd05-fg: rgba(47,79,79,0.9);
+  --hd05-border: rgba(0,0,0,0.05);
+  --hd05-bg-color: #48b1f2;
+  --hd05-gradient: linear-gradient(
+      -45deg,
+      transparent 40%,
+      rgba(0,0,0,0.07) 40%,
+      rgba(0,0,0,0.07) 60%,
+      transparent 60%
+    ),
+    linear-gradient(to top, rgba(255,255,255,0.28), rgba(255,255,255,0.10)),
+    linear-gradient(to top, color-mix(in srgb, #48b1f2 12%, white), #48b1f2);
+
+  --hd06-fs: 1rem;
+  --hd06-fg: #009;
+  --hd06-bg: #ffc;
+  --hd06-shadow: 12px 0 0 0 var(--hd06-bg),
+                 0 12px 0 0 var(--hd06-bg),
+                 1px 15px 4px -3px rgba(0,0,0,.2);
+  --hd06-corner: #cc9;
+  --hd06-accent-h: 20px;
+  --hd06-accent-bg: rgba(255,182,182,.4);
+  --hd06-accent-rotate: -1deg;
+
+  --hd07-fs: 3rem;
+  --hd07-ff: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  --hd07-fg: #666;
+  --hd07-bg: #ccc;
+  --hd07-bc: #999;
+  --hd07-grad-1: rgba(220,220,220,1);
+  --hd07-grad-2: rgba(240,240,240,1);
+  --hd07-grad-3: rgba(235,235,235,1);
+  --hd07-grad-4: rgba(215,215,215,1);
+  --hd07-grad-5: rgba(210,210,210,1);
+  --hd07-after-border: #eee;
+  --hd07-text-shadow: 1px 1px 0 rgba(255,255,255,1);
+  --hd07-inset: inset 0 0 0 1px rgba(255,255,255,.5);
+
+  --hd08-fs: 22px;
+  --hd08-lh: 40px;
+  --hd08-ff: Arial, Helvetica, sans-serif;
+  --hd08-fg: #666;
+  --hd08-bg: #f3f3f3;
+  --hd08-badge-bg: #f60;
+  --hd08-grad-bottom: linear-gradient(
+    to bottom,
+    transparent 20%,
+    rgba(255,255,255,.1) 20%,
+    rgba(255,255,255,.1) 40%,
+    rgba(255,255,255,.3) 40%,
+    rgba(255,255,255,.3) 60%,
+    rgba(255,255,255,.5) 60%,
+    rgba(255,255,255,.5) 80%,
+    rgba(255,255,255,.6) 80%,
+    rgba(255,255,255,.6) 100%
+  );
+  --hd08-grad-right: linear-gradient(
+    to right,
+    transparent 20%,
+    rgba(255,255,255,.1) 20%,
+    rgba(255,255,255,.1) 40%,
+    rgba(255,255,255,.3) 40%,
+    rgba(255,255,255,.3) 60%,
+    rgba(255,255,255,.5) 60%,
+    rgba(255,255,255,.5) 80%,
+    rgba(255,255,255,.6) 80%,
+    rgba(255,255,255,.6) 100%
+  );
+  --hd08-icon: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1.003 1.003 0 000-1.42l-2.34-2.34a1.003 1.003 0 00-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.82z' fill='%23fff'/%3E%3C/svg%3E");
+  --hd08-icon-size: 60%;
+  --hd08-after-border: #fff;
+
+  --hd09-fs: 1.375rem;
+  --hd09-fg: #fff;
+  --hd09-bg: #c33;
+  --hd09-br: #600;
+  --hd09-before: #c96;
+  --hd09-2-edge: #600;
+  --hd09-2-br: 2px;
+  --hd09-2-angle-fg: #c96;
+
+  --hd10-fs: 1rem;
+  --hd10-fg: #111;
+  --hd10-bg: #ccc;
+  --hd10-before-bg: #eee;
+
+  --hd10-2-fg: #111;
+  --hd10-2-bg: #ccc;
+  --hd10-2-fs: 1.125rem;
+  --hd10-2-pin-base: #eee;
+  --hd10-2-pin-spot: rgba(255,255,255,.8);
+
+  --hd10-3-fs: 1.25rem;
+  --hd10-3-fg: #111;
+  --hd10-3-bg: #ccc;
+  --hd10-3-pin-bg: #999;
+  --hd10-3-pin-inner: #777;
+
+  --hd11-fs: 1rem;          --hd11-blc:#777;     --hd11-bc:#555;
+  --hd12-fs: 1.25rem;       --hd12-fg:#111;      --hd12-b1:#999;  --hd12-b2:#777;
+  --hd13-bc:#e6e6fa;        --hd13-bw: 2px;      --hd13-fg:inherit; --hd13-bs:solid;
+  --hd13-blc:#a00;
+  --hd13-2-fs:1rem;         --hd13-2-btc:#b92a2c; --hd13-2-bbc:#b92a2c;
+  --hd13-3-fs:1rem;         --hd13-3-fg:#111;    --hd13-3-bc:#b92a2c;
+  --hd13-4-fs:1rem;         --hd13-4-bc:#b92a2c; --hd13-4-bg:#b92a2c;
+  --hd13-5-fs:4rem;         --hd13-5-bc:#b92a2c; --hd13-5-bg:#b92a2c;
+  --hd13-6-fs:4rem;         --hd13-6-fg:#fff;    --hd13-6-bg:#b92a2c; --hd13-6-bc:#b92a2c;
+  --hd13-7-fs:4rem;         --hd13-7-fg:#111;    --hd13-7-bc:#b92a2c;
+  --hd13-8-fs:4rem;         --hd13-8-fg:#fff;    --hd13-8-bg:#b92a2c;
+  --hd13-9-fs:4rem;         --hd13-9-fg:#111;    --hd13-9-bc:#b92a2c; --hd13-9-tsc:#999; --hd13-9-sc:#aaa;
+}
+
+/* ダークモード対応 */
+.dark {
+  /* metal */
+  --plate-top:rgba(255,255,255,.18);
+  --plate-mid:rgba(255,255,255,.06);
+  --plate-bot:rgba(0,0,0,.28);
+
+  /* 見出し系のダーク上書き */
+  --hd01-fg:#eee; --hd01-bg:#222; --hd01-b1:#555; --hd01-b2:#555;
+
+  --hd02-fg: #eee;
+  --hd02-bg: #2b3240;
+  --hd02-border: rgba(255,255,255,0.2);
+  --hd02-shadow: 0 1px 2px 0 rgba(0,0,0,0.5),
+                 30px 0 0 0 var(--hd02-bg),
+                 -30px 0 0 0 var(--hd02-bg);
+  --hd02-text-shadow: 1px 1px 0 rgba(0,0,0,0.7);
+
+  --hd03-fg: #f2f2f2;
+  --hd03-bg: color-mix(in srgb, #1f1f1f 82%, #e38b7b 18%);
+  --hd03-gradient: linear-gradient(
+    to bottom,
+    transparent 8%,
+    rgba(255,255,255,0.08) 8%,
+    rgba(255,255,255,0.08) 12%,
+    transparent 12%,
+    transparent 88%,
+    rgba(255,255,255,0.08) 88%,
+    rgba(255,255,255,0.08) 92%,
+    transparent 92%
+  );
+  --hd03-shadow: 0 1px 2px 0 rgba(0,0,0,0.35);
+  --hd03-before-border-b: color-mix(in srgb, #e38b7b 65%, #000 35%);
+  --hd03-after-border-t:  color-mix(in srgb, #e38b7b 65%, #000 35%);
+
+  --hd03-2-fg: #eee;
+  --hd03-2-bg: #222;
+  --hd03-2-shadow: 0 1px 3px #111;
+  --hd03-2-triangle: #444;
+
+  --hd04-fg: #f0f0f0;
+  --hd04-bg: color-mix(in srgb, #222 85%, #3a3a3a 15%);
+  --hd04-border: color-mix(in srgb, #222 70%, #cfcfcf 30%);
+  --hd04-inset-color: #111;
+  --hd04-shadow: inset -7px -5px 0 0 var(--hd04-inset-color), 2px 3px 0 0 #000;
+  --hd04-triangle-top: var(--hd04-border);
+  --hd04-triangle-bottom: var(--hd04-inset-color);
+
+  --hd04-2-fg: #eee;
+  --hd04-2-text-shadow: 1px 1px 1px #000;
+  --hd04-2-bg: #222;
+  --hd04-2-border: #555;
+  --hd04-2-triangle: var(--hd04-2-border);
+
+  --hd04-3-fg: #eee;
+  --hd04-3-bg: #222;
+  --hd04-3-border: #555;
+  --hd04-3-notch-outer: var(--hd04-3-border);
+  --hd04-3-notch-inner: var(--hd04-3-bg);
+
+  --hd05-fg: #f0f0f0;
+  --hd05-border: rgba(255,255,255,0.08);
+  --hd05-bg-color: #1f1f1f;
+  --hd05-gradient:
+    linear-gradient(
+      -45deg,
+      transparent 42%,
+      rgba(255,255,255,0.07) 42%,
+      rgba(255,255,255,0.07) 58%,
+      transparent 58%
+    ),
+    linear-gradient(to top, rgba(255,255,255,0.06), rgba(255,255,255,0)),
+    linear-gradient(to bottom, rgba(0,0,0,0.25), transparent 55%);
+
+  --hd06-fg: #e6f0ff;
+  --hd06-bg: #222;
+  --hd06-shadow: 12px 0 0 0 var(--hd06-bg),
+                 0 12px 0 0 var(--hd06-bg),
+                 1px 15px 4px -3px rgba(0,0,0,.5);
+  --hd06-corner: #444;
+  --hd06-accent-bg: rgba(120,160,255,.25);
+
+  --hd07-fg: #eee;
+  --hd07-bg: #2a2a2a;
+  --hd07-bc: #4a4a4a;
+  --hd07-grad-1: rgba(58,58,58,1);
+  --hd07-grad-2: rgba(68,68,68,1);
+  --hd07-grad-3: rgba(62,62,62,1);
+  --hd07-grad-4: rgba(52,52,52,1);
+  --hd07-grad-5: rgba(48,48,48,1);
+  --hd07-after-border: rgba(255,255,255,.18);
+  --hd07-text-shadow: 1px 1px 0 rgba(0,0,0,.8);
+
+  --hd08-fg: #e6e6e6;
+  --hd08-bg: #2a2a2a;
+  --hd08-badge-bg: #ff7a1a;
+  --hd08-after-border: rgba(255,255,255,.85);
+
+  --hd09-fg: #eee;
+  --hd09-bg: #222;
+  --hd09-br: #555;
+  --hd09-before: #777;
+
+  --hd09-2-bg: #a42a2a;
+  --hd09-2-fg: #f3f3f3;
+  --hd09-2-edge: #3a1515;
+  --hd09-2-angle-fg: #d79a7a;
+
+  --hd10-fg: #eee;
+  --hd10-bg: #222;
+  --hd10-before-bg: #444;
+
+  --hd10-2-fg: #eaeaea;
+  --hd10-2-bg: #222;
+  --hd10-2-pin-base: #999;
+  --hd10-2-pin-spot: rgba(255,255,255,.35);
+
+  --hd10-3-fg: #eee;
+  --hd10-3-bg: #333;
+  --hd10-3-pin-bg: #555;
+  --hd10-3-pin-inner: #444;
+
+  --hd11-blc:#999; --hd11-bc:#666;
+  --hd12-fg:#eee;
+  --hd13-bc:#777;
+  --hd13-3-fg:#eee; --hd13-3-bc:#666;
+  --hd13-4-bc:#777; --hd13-4-bg:#777;
+  --hd13-6-fg:#eee; --hd13-6-bg:#444; --hd13-6-bc:#666;
+  --hd13-7-fg:#eee; --hd13-7-bc:#666;
+  --hd13-8-fg:#eee; --hd13-8-bg:#444;
+  --hd13-9-fg:#eee; --hd13-9-bc:#666; --hd13-9-tsc:#444; --hd13-9-sc:#222;
+}
