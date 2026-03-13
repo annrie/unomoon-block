@@ -4,16 +4,7 @@
 import type { UserShortcuts } from 'unocss'
 
 export const headingShortcuts: UserShortcuts = [
-[
-  'heading01',
-  `relative p-[5px] font-bold text-[1.5rem] leading-[1.6] font-sans
-   text-[var(--hd01-fg)] text-center
-   bg-[var(--hd01-bg)]
-   border-t-1 border-b-1 border-dashed
-   border-t-[var(--hd01-border)] border-b-[var(--hd01-border)]
-   shadow-[var(--hd01-shadow-inset)]
-   text-shadow-[var(--hd01-text-shadow)]`,
-],
+  ['heading01',   'relative block px-4 py-2 text-[var(--hd01-fg)] bg-[var(--hd01-bg)] border border-[var(--hd01-b1)] rounded'],
 [
   'heading02',
   `relative w-1/4 m-0 mx-[-1px] font-bold
@@ -30,8 +21,7 @@ export const headingShortcuts: UserShortcuts = [
   `relative p-[5px] m-0 mx-[-10px] mb-[-10px] font-normal
    text-[var(--hd03-fs)] leading-[1.6] font-serif
    text-[var(--hd03-fg)] text-center
-   bg-[var(--hd03-bg)]
-   [background-image:var(--hd03-gradient)]
+   [background:var(--hd03-bg)] [background-image:var(--hd03-gradient)]
    shadow-[var(--hd03-shadow)]
    transform rotate-[-3deg] skew-[-3deg]
    before:absolute before:top-[-5px] before:left-0 before:content-empty
@@ -93,7 +83,7 @@ export const headingShortcuts: UserShortcuts = [
   'heading04-3',
   `relative pt-[15px] pr-[5px] pb-[12px] pl-[10px]
    mt-[30px] mx-[-10px] mb-[10px]
-   text-[var(--hd04-3-fs)] leading-none
+   [font-size:var(--hd04-3-fs)] leading-none
    text-[var(--hd04-3-fg)]
    bg-[var(--hd04-3-bg)]
    border-2 border-solid border-[var(--hd04-3-border)]
@@ -110,12 +100,12 @@ export const headingShortcuts: UserShortcuts = [
 [
   'heading05',
   `relative block w-full mt-[20px] mb-0
-   h-[6rem] px-[6rem]
-   text-[var(--hd05-fs)] font-bold leading-[6rem]
-   text-[var(--hd05-fg)] text-left indent-[-2rem] whitespace-nowrap
-   rounded-[4px] border border-solid border-[var(--hd05-border)]
-   [background-image:var(--hd05-gradient)]
-   bg-[var(--hd05-bg-color)]`,
+   px-[20px] py-[16px]
+   [font-size:1.125rem] [--un-leading:1.5] [line-height:1.5] [font-weight:bold]
+   [color:var(--hd05-fg)] text-left
+   rounded-[4px] [border:1px_solid_var(--hd05-border)]
+   [background:var(--hd05-bg-color)]
+   [background-image:var(--hd05-gradient)]`,
 ],
 [
   'heading06',
@@ -134,8 +124,8 @@ export const headingShortcuts: UserShortcuts = [
 ],
 [
   'heading06-label',
-  `relative block
-   after:absolute after:bottom-0 after:left-0
+  `relative inline-block z-0
+   after:absolute after:bottom-0 after:left-0 after:z-[-1]
    after:w-full after:h-[var(--hd06-accent-h)]
    after:content-empty after:bg-[var(--hd06-accent-bg)]
    after:transform after:rotate-[var(--hd06-accent-rotate)]`,
@@ -177,6 +167,8 @@ export const headingShortcuts: UserShortcuts = [
 
    [background-image:var(--metal-grad-y),var(--metal-grad-x)]
    [background-blend-mode:soft-light,normal]
+   shadow-[var(--metal-inset),var(--metal-outer),0_0_0_1px_rgba(255,255,255,.02)_inset]
+
    shadow-[var(--metal-inset),var(--metal-outer)]
 
    before:absolute before:top-0 before:left-0 before:z-[-1]
@@ -203,31 +195,38 @@ export const headingShortcuts: UserShortcuts = [
    before:left-[-10px] before:content-['<'] before:text-[25px]
    before:leading-none before:text-[var(--hd09-before)]
    after:absolute after:top-[-2px] after:left-[-10px]
-   after:content-empty after:h-[130%]
+   after:content-[''] after:h-[130%]
    after:border-2 after:border-solid after:border-[var(--hd09-br)]
    after:rounded-[2px] after:transform after:rotate-[-2deg]`,
 ],
 [
   'heading09-2',
   `relative px-[15px] py-[10px] mx-[20px]
-   font-bold text-[var(--hd09-fs)] leading-[1.2] font-sans
-   text-[var(--hd09-fg)] bg-[var(--hd09-bg)]
+   font-bold text-[22px] leading-[1.2] font-sans
+   text-[var(--hd09-2-fg)] bg-[var(--hd09-2-bg)]
 
    [background-image:var(--metal-grad-y),var(--metal-grad-x)]
    [background-blend-mode:soft-light,normal]
    shadow-[var(--metal-inset),var(--metal-outer)]
 
-   border-t-[var(--hd09-2-br)] border-r-[var(--hd09-2-br)] border-b-[var(--hd09-2-br)] border-l-[var(--hd09-2-br)]
-   border-t-solid border-r-solid border-b-solid border-l-solid
-   border-t-[var(--hd09-bg)] border-r-[var(--hd09-2-edge)] border-b-[var(--hd09-2-edge)] border-l-[var(--hd09-bg)]
+   border-[var(--hd09-2-br)] border-solid
+   [border-top-color:var(--hd09-2-bg)]
+   [border-right-color:var(--hd09-2-edge)]
+   [border-bottom-color:var(--hd09-2-edge)]
+   [border-left-color:var(--hd09-2-bg)]
 
-   before:absolute before:top-1/2 before:-translate-y-1/2 before:left-[-10px]
-   before:w-0 before:h-0 before:text-[25px] before:leading-none
-   before:text-[var(--hd09-2-angle-fg)] before:content-['<']
+   before:absolute before:top-1/2 before:left-[-10px]
+   before:-translate-y-1/2 before:inline-block
+   before:text-[25px] before:leading-none before:font-bold
+   before:text-[var(--hd09-2-angle-fg)]
+   before:content-['<']
 
-   after:absolute after:top-[-2px] after:left-[-10px] after:content-empty
-   after:h-[130%] after:border-[2px] after:border-solid after:border-[var(--hd09-2-edge)]
-   after:rounded-[2px] after:[transform:rotate(-2deg)]`,
+   after:absolute after:top-[-2px] after:left-[-10px]
+   after:content-[''] after:h-[130%]
+   after:border-[2px] after:border-solid
+   [--_hd09-2-edge:var(--hd09-2-edge)]
+   after:[border-color:var(--_hd09-2-edge)]
+   after:rounded-[2px] after:rotate-[-2deg]`,
 ],
 [
   'heading10',
@@ -252,7 +251,6 @@ export const headingShortcuts: UserShortcuts = [
    [background-image:var(--metal-grad-y),var(--metal-grad-x)]
    [background-blend-mode:soft-light,normal]
    shadow-[var(--metal-inset),var(--metal-outer)]
-   shadow-[inset_0_2px_3px_rgba(0,0,0,.18)]
 
    before:absolute before:top-1/2 before:left-[14px]
    before:w-[20px] before:h-[20px] before:mt-[-10px] before:content-empty
@@ -378,11 +376,10 @@ export const headingShortcuts: UserShortcuts = [
    shadow-[0_1px_0_var(--hd13-9-sc)]
    first-letter:text-[3.75rem]`,
 ],
-// タイトルスタイル用ブリッジ
 [
   'latest-columns-bridge',
   'latest-columns-title-style',
-  { selector: '#latest-columns > .flex' },
+  { selector: '#latest-columns > .flex' }, // 実DOMに合わせて：タイトル行の .flex に当てる例
 ],
 [
   'machaki-pickup-bridge',
