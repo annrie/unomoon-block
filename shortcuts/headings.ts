@@ -174,8 +174,7 @@ export const headingShortcuts: UserShortcuts = [
    before:absolute before:top-0 before:left-0 before:z-[-1]
    before:w-[40px] before:h-[40px] before:content-empty
    before:bg-[var(--hd08-badge-bg)]
-   [--_hd08-bgi:var(--hd08-icon),var(--hd08-grad-bottom)]
-   before:[background-image:var(--_hd08-bgi)]
+   before:[background-image:var(--hd08-icon),var(--hd08-grad-bottom)]
    before:[background-repeat:no-repeat,repeat]
    before:[background-position:center,0_0]
    before:[background-size:var(--hd08-icon-size)_var(--hd08-icon-size),auto]
@@ -224,8 +223,7 @@ export const headingShortcuts: UserShortcuts = [
    after:absolute after:top-[-2px] after:left-[-10px]
    after:content-[''] after:h-[130%]
    after:border-[2px] after:border-solid
-   [--_hd09-2-edge:var(--hd09-2-edge)]
-   after:[border-color:var(--_hd09-2-edge)]
+   after:[border-color:var(--hd09-2-edge)]
    after:rounded-[2px] after:rotate-[-2deg]`,
 ],
 [

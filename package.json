@@ -1,43 +1,94 @@
 {
-	"name": "uno-block",
-	"version": "1.0.0",
-	"type": "module",
-	"description": "UnoCSS block editor plugin for unomoon theme",
-	"scripts": {
-		"dev": "vite",
-		"build": "vite build",
-		"preview": "vite preview",
+  "name": "uno-block",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "UnoCSS block editor plugin for unomoon theme",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "release:patch": "standard-version --release-as patch",
-    "release:minor": "standard-version --release-as minor",
-    "release:major": "standard-version --release-as major",
+    "release:patch": "changelogen --release --patch",
+    "release:minor": "changelogen --release --minor",
+    "release:major": "changelogen --release --major",
     "oco": "opencommit",
     "lloco": "OCO_AI_PROVIDER='ollama' opencommit"
-	},
-	"dependencies": {
-		"@wordpress/blocks": "^15.14.0",
-		"@wordpress/element": "^6.41.0"
-	},
-	"devDependencies": {
-		"@julr/unocss-preset-heropatterns": "^2.0.0",
-		"@liftkit-vue/preset-unocss": "^0.1.0",
-		"@liftkit-vue/theme-css": "^0.1.0",
-		"@types/node": "^25.5.0",
-		"@unocss/preset-icons": "^66.6.6",
-		"@unocss/preset-typography": "^66.6.6",
-		"@unocss/preset-web-fonts": "^66.6.6",
-		"@unocss/preset-wind4": "^66.6.6",
-		"@unocss/transformer-compile-class": "^66.6.6",
-		"@unocss/transformer-directives": "^66.6.6",
-		"@unocss/transformer-variant-group": "^66.6.6",
-		"@vitejs/plugin-react": "^6.0.0",
-		"animated-unocss": "^0.0.6",
-		"rollup-plugin-external-globals": "^0.13.0",
-		"sass": "^1.98.0",
-		"typescript": "^5.9.3",
-		"unocss": "^66.6.6",
-		"unocss-preset-extra": "^1.0.0",
-		"vite": "^8.0.0"
-	}
+  },
+  "dependencies": {
+    "@wordpress/blocks": "^15.24.0",
+    "@wordpress/element": "^6.46.0"
+  },
+  "devDependencies": {
+    "@julr/unocss-preset-heropatterns": "^2.0.0",
+    "@liftkit-vue/preset-unocss": "^0.2.1",
+    "@liftkit-vue/theme-css": "^0.2.1",
+    "@types/node": "^25.9.5",
+    "@unocss/preset-icons": "^66.7.5",
+    "@unocss/preset-typography": "^66.7.5",
+    "@unocss/preset-web-fonts": "^66.7.5",
+    "@unocss/preset-wind4": "^66.7.5",
+    "@unocss/transformer-compile-class": "^66.7.5",
+    "@unocss/transformer-directives": "^66.7.5",
+    "@unocss/transformer-variant-group": "^66.7.5",
+    "@vitejs/plugin-react": "^6.0.3",
+    "animated-unocss": "^0.0.6",
+    "changelogen": "^0.6.2",
+    "rollup-plugin-external-globals": "^0.13.0",
+    "sass": "^1.101.0",
+    "typescript": "^5.9.3",
+    "unocss": "^66.7.5",
+    "unocss-preset-extra": "^1.0.0",
+    "vite": "^8.1.5"
+  },
+  "changelog": {
+    "types": {
+      "feat": {
+        "title": "🚀 新機能",
+        "semver": "minor"
+      },
+      "fix": {
+        "title": "🐛 バグ修正",
+        "semver": "patch"
+      },
+      "perf": {
+        "title": "⚡ パフォーマンスの向上",
+        "semver": "patch"
+      },
+      "refactor": {
+        "title": "♻️ リファクタリング",
+        "semver": "patch"
+      },
+      "docs": {
+        "title": "📖 ドキュメント"
+      },
+      "style": {
+        "title": "🎨 コードスタイル"
+      },
+      "test": {
+        "title": "✅ テストの追加・修正"
+      },
+      "ci": {
+        "title": "🤖 CI関連"
+      },
+      "build": {
+        "title": "📦 ビルド",
+        "semver": "patch"
+      },
+      "chore": {
+        "title": "🧹 ビルドプロセスまたは補助ツールの変更"
+      },
+      "config": {
+        "title": "🔧 設定ファイル"
+      },
+      "package": {
+        "title": "📦 パッケージ"
+      }
+    },
+    "templates": {
+      "commitMessage": "chore(release): 🏹v{{newVersion}}",
+      "tagMessage": "v{{newVersion}}",
+      "tagBody": "v{{newVersion}}"
+    }
+  }
 }
