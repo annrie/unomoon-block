@@ -21,8 +21,6 @@
   },
   "devDependencies": {
     "@julr/unocss-preset-heropatterns": "^2.0.0",
-    "@liftkit-vue/preset-unocss": "^0.2.1",
-    "@liftkit-vue/theme-css": "^0.2.1",
     "@types/node": "^25.9.5",
     "@unocss/preset-icons": "^66.7.5",
     "@unocss/preset-typography": "^66.7.5",

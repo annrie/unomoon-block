@@ -1,4 +1,3 @@
-import { readFileSync } from 'node:fs';
 import {
   defineConfig,
   presetAttributify,
@@ -11,37 +10,9 @@ import {
 import { presetWind4 } from '@unocss/preset-wind4';
 import transformerCompileClass from '@unocss/transformer-compile-class';
 import { presetHeroPatterns } from '@julr/unocss-preset-heropatterns';
-import { presetLiftKit } from '@liftkit-vue/preset-unocss';
 import { presetExtra } from 'unocss-preset-extra';
 import { animatedUno } from 'animated-unocss';
 import { headingShortcuts } from './shortcuts/headings';
-
-// LiftKit CSS変数のみを注入（リセットスタイルは除外）
-const liftkitCoreCSS = (() => {
-  let css = readFileSync(
-    new URL('./node_modules/@liftkit-vue/theme-css/css/liftkit-core.css', import.meta.url),
-    'utf-8',
-  );
-
-  const cutoff = css.indexOf('/* Everything from here');
-  if (cutoff !== -1) {
-    const buttonMatch = css.match(/\/\* Make Buttons into Inline Elements \*\/[\s\S]*$/);
-    css = css.slice(0, cutoff) + (buttonMatch ? '\n' + buttonMatch[0] : '');
-  }
-
-  const sf = 1.618;
-  const roundTo = (v: number, p: number) => Math.round(v / p) * p;
-  css = css.replace(/round\(pow\(var\(--lk-scalefactor\),\s*([-\d.]+)\),\s*[\d.]+\)/g, (_m, exp) => {
-    return String(roundTo(Math.pow(sf, Number(exp)), 0.001));
-  });
-  css = css.replace(/calc\(round\(pow\(var\(--lk-scalefactor\),\s*([-\d.]+)\),\s*[\d.]+\)\)/g, (_m, exp) => {
-    return String(roundTo(Math.pow(sf, Number(exp)), 0.001));
-  });
-  css = css.replace(/calc\(1em \* round\(pow\(var\(--lk-scalefactor\),\s*([-\d.]+)\),\s*[\d.]+\)\)/g, (_m, exp) => {
-    return `calc(1em * ${roundTo(Math.pow(sf, Number(exp)), 0.001)})`;
-  });
-  return css;
-})();
 
 export default defineConfig({
   theme: {
@@ -93,13 +64,8 @@ export default defineConfig({
     presetTypography(),
     presetHeroPatterns(),
     presetExtra(),
-    presetLiftKit({ injectVars: false }),
     animatedUno(),
     presetWebFonts({}),
-  ],
-
-  preflights: [
-    { getCSS: () => liftkitCoreCSS, layer: 'base' },
   ],
 
   transformers: [
