@@ -1,7 +1,8 @@
 # unomoon-block
 
 WordPressブロックエディタ(Gutenberg)用のカスタム見出しブロックプラグイン。
-[unomoon](https://github.com/annrie/unomoon)テーマ向けに、**29種類の装飾見出しスタイル**を提供します。
+[cielos](https://github.com/annrie/cielos)テーマ向けに、**29種類の装飾見出しスタイル**を提供します。
+(リポジトリ名は歴史的経緯によるもので、対象テーマはcielosです)
 
 スタイルは[UnoCSS](https://unocss.dev/)のショートカットとして定義されており、ビルド時に必要なCSSだけが静的に生成されます(ランタイム依存なし)。
 
