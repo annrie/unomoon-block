@@ -1,5 +1,20 @@
 # unomoon-block
 
+<p align="center">
+  <!-- License -->
+  <a href="LICENSE">
+    <img src="https://img.shields.io/github/license/annrie/unomoon-block.svg" alt="License">
+  </a>
+  <!-- Stars -->
+  <a href="https://github.com/annrie/unomoon-block/stargazers">
+    <img src="https://img.shields.io/github/stars/annrie/unomoon-block.svg" alt="Stars">
+  </a>
+  <!-- Last commit -->
+  <a href="https://github.com/annrie/unomoon-block/commits">
+    <img src="https://img.shields.io/github/last-commit/annrie/unomoon-block.svg" alt="Last commit">
+  </a>
+</p>
+
 WordPressブロックエディタ(Gutenberg)用のカスタム見出しブロックプラグイン。
 [cielos](https://github.com/annrie/cielos)テーマ向けに、**29種類の装飾見出しスタイル**を提供します。
 (リポジトリ名は歴史的経緯によるもので、対象テーマはcielosです)
