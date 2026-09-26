@@ -16,28 +16,28 @@
     "lloco": "OCO_AI_PROVIDER='ollama' opencommit"
   },
   "dependencies": {
-    "@wordpress/blocks": "^15.24.0",
+    "@wordpress/blocks": "^15.27.0",
     "@wordpress/element": "^6.46.0"
   },
   "devDependencies": {
     "@julr/unocss-preset-heropatterns": "^2.0.0",
-    "@types/node": "^25.9.5",
-    "@unocss/preset-icons": "^66.7.5",
-    "@unocss/preset-typography": "^66.7.5",
-    "@unocss/preset-web-fonts": "^66.7.5",
-    "@unocss/preset-wind4": "^66.7.5",
-    "@unocss/transformer-compile-class": "^66.7.5",
-    "@unocss/transformer-directives": "^66.7.5",
-    "@unocss/transformer-variant-group": "^66.7.5",
-    "@vitejs/plugin-react": "^6.0.3",
+    "@types/node": "^25.9.8",
+    "@unocss/preset-icons": "^66.10.5",
+    "@unocss/preset-typography": "^66.10.5",
+    "@unocss/preset-web-fonts": "^66.10.5",
+    "@unocss/preset-wind4": "^66.10.5",
+    "@unocss/transformer-compile-class": "^66.10.5",
+    "@unocss/transformer-directives": "^66.10.5",
+    "@unocss/transformer-variant-group": "^66.10.5",
+    "@vitejs/plugin-react": "^6.1.1",
     "animated-unocss": "^0.0.6",
     "changelogen": "^0.6.2",
     "rollup-plugin-external-globals": "^0.13.0",
-    "sass": "^1.101.0",
+    "sass": "^1.105.0",
     "typescript": "^5.9.3",
-    "unocss": "^66.7.5",
+    "unocss": "^66.10.5",
     "unocss-preset-extra": "^1.0.0",
-    "vite": "^8.1.5"
+    "vite": "^8.3.1"
   },
   "changelog": {
     "types": {
