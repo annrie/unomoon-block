@@ -4,3 +4,19 @@ allowBuilds:
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - esbuild
+
+overrides:
+  # 2026-10-04: pnpm audit の指摘(いずれも vite / unocss / sass 経由のビルド時依存)。
+  # immutable: Immutable.Map/Set のハッシュ衝突 DoS (GHSA-xvcm-6775-5m9r) と
+  #   List の 32bit trie オーバーフロー (GHSA-v56q-mh7h-f735)。sass 経由。
+  immutable@^5.0.0: ^5.1.9
+  # picomatch: POSIX 文字クラスのメソッド注入 (GHSA-3v7f-55p6-f55p) と extglob の ReDoS
+  #   (GHSA-c2c7-rcm5-vvqj)。@parcel/watcher → micromatch 経由の 2 系のみ(4 系は対象外)。
+  picomatch@^2.0.0: ^2.3.2
+  # rollup: パストラバーサルによる任意ファイル書き込み (GHSA-mw96-cpmx-2vgc)。
+  #   @unocss/rollup / rollup-plugin-external-globals 経由(vite 8 本体は rolldown)。
+  rollup@^4.0.0: ^4.64.0
+  # --- 以下は override しない(上流待ち) ---
+  #   deepmerge 4.3.1 (SNYK-JS-DEEPMERGE-19964053、Prototype Pollution、修正版なし)。
+  #     @wordpress/data 経由だが vite.config.ts で wp.data に外部化しておりバンドルされない。Snyk で一時 ignore
+  #   braces 3.0.3 (GHSA-vfj7-8cjw-p6xm、修正版なし)。@parcel/watcher → micromatch 経由のビルド時依存
