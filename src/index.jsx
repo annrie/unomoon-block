@@ -1,10 +1,10 @@
-import { registerBlockType } from '@wordpress/blocks';
-import 'virtual:uno.css'; // UnoCSS styles
-import './tokens.css';  // トークンをインポート
-import './style.scss'; // フロントエンドおよびエディター用
+import { registerBlockType } from '@wordpress/blocks'
+import 'virtual:uno.css' // UnoCSS styles
+import './tokens.css' // トークンをインポート
+import './style.scss' // フロントエンドおよびエディター用
 
 // 個別ブロックをインポート
-import './blocks/heading';
+import './blocks/heading'
 
 registerBlockType('uno/test-block', {
   title: 'Uno Test Block',
@@ -22,4 +22,4 @@ registerBlockType('uno/test-block', {
       プラグイン側ブロック (Plugin-frontend)
     </div>
   ),
-});
+})

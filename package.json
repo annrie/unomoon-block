@@ -20,6 +20,7 @@
     "@wordpress/element": "^6.46.0"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^10.0.0",
     "@julr/unocss-preset-heropatterns": "^2.0.0",
     "@types/node": "^25.9.9",
     "@unocss/preset-icons": "^66.12.0",
@@ -32,6 +33,7 @@
     "@vitejs/plugin-react": "^6.1.2",
     "animated-unocss": "^0.0.6",
     "changelogen": "^0.6.2",
+    "eslint": "^10.14.0",
     "rollup-plugin-external-globals": "^0.13.0",
     "sass": "^1.107.0",
     "typescript": "^5.9.3",

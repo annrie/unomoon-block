@@ -1,8 +1,9 @@
-import { defineConfig, type Plugin } from 'vite';
-import react from '@vitejs/plugin-react';
-import UnoCSS from 'unocss/vite';
-import { writeFileSync, mkdirSync, existsSync } from 'fs';
-import { resolve } from 'path';
+import type { Plugin } from 'vite'
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
+import { resolve } from 'node:path'
+import react from '@vitejs/plugin-react'
+import UnoCSS from 'unocss/vite'
+import { defineConfig } from 'vite'
 
 // WordPress の外部依存関係マッピング
 const wpExternals: Record<string, string> = {
@@ -18,7 +19,7 @@ const wpExternals: Record<string, string> = {
   '@wordpress/primitives': 'wp.primitives',
   'react': 'React',
   'react-dom': 'ReactDOM',
-};
+}
 
 // WordPress 依存関係のハンドル名マッピング
 const wpHandles: Record<string, string> = {
@@ -34,11 +35,11 @@ const wpHandles: Record<string, string> = {
   '@wordpress/primitives': 'wp-primitives',
   'react': 'react',
   'react-dom': 'react-dom',
-};
+}
 
 // index.asset.php を生成するカスタムプラグイン
 function wpAssetPlugin(): Plugin {
-  const dependencies = new Set<string>();
+  const dependencies = new Set<string>()
 
   return {
     name: 'wp-asset-generator',
@@ -49,27 +50,27 @@ function wpAssetPlugin(): Plugin {
       if (id.endsWith('.jsx') || id.endsWith('.tsx') || id.endsWith('.js') || id.endsWith('.ts')) {
         for (const pkg of Object.keys(wpExternals)) {
           if (code.includes(`from '${pkg}'`) || code.includes(`from "${pkg}"`)) {
-            dependencies.add(wpHandles[pkg]);
+            dependencies.add(wpHandles[pkg])
           }
         }
       }
-      return null;
+      return null
     },
 
     generateBundle() {
-      const buildDir = resolve(__dirname, 'build');
+      const buildDir = resolve(__dirname, 'build')
       if (!existsSync(buildDir)) {
-        mkdirSync(buildDir, { recursive: true });
+        mkdirSync(buildDir, { recursive: true })
       }
 
       // index.asset.php を生成
-      const depsArray = Array.from(dependencies).filter(d => d.startsWith('wp-'));
-      const version = Date.now().toString(36);
-      const phpContent = `<?php return array('dependencies' => array(${depsArray.map(d => `'${d}'`).join(', ')}), 'version' => '${version}');`;
+      const depsArray = Array.from(dependencies).filter(d => d.startsWith('wp-'))
+      const version = Date.now().toString(36)
+      const phpContent = `<?php return array('dependencies' => array(${depsArray.map(d => `'${d}'`).join(', ')}), 'version' => '${version}');`
 
-      writeFileSync(resolve(buildDir, 'index.asset.php'), phpContent);
+      writeFileSync(resolve(buildDir, 'index.asset.php'), phpContent)
     },
-  };
+  }
 }
 
 export default defineConfig({
@@ -101,9 +102,9 @@ export default defineConfig({
         assetFileNames: (assetInfo) => {
           // CSS ファイル名を WordPress 規約に合わせる
           if (assetInfo.name?.endsWith('.css')) {
-            return 'style-index.css';
+            return 'style-index.css'
           }
-          return assetInfo.name || 'assets/[name]-[hash][extname]';
+          return assetInfo.name || 'assets/[name]-[hash][extname]'
         },
       },
     },
@@ -116,4 +117,4 @@ export default defineConfig({
       },
     },
   },
-});
+})
