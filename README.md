@@ -47,6 +47,11 @@ pnpm lint       # ESLint
 
 ## WordPressへの導入
 
+### リリース版のzipを使う
+
+[Releases](https://github.com/annrie/unomoon-block/releases) から `unomoon-block-<版>.zip` をダウンロードし、WordPress管理画面の
+「プラグイン → 新規追加 → プラグインのアップロード」からインストールして有効化します。
+
 ### 配布用zipを作る
 
 ```bash
@@ -63,8 +68,11 @@ bash scripts/package.sh
 ## リリース
 
 ```bash
-pnpm release:patch   # changelogenでバンプ + CHANGELOG + タグ
+pnpm release:patch --push   # changelogenでバンプ + CHANGELOG + タグ + push
 ```
+
+changelogen は `uno-block.php` のヘッダーの `Version` を書き換えないので、リリースの前に次の版へ手で合わせます。
+GitHub のリリースには `bash scripts/package.sh` で作った zip を `unomoon-block-<版>.zip` の名前で添付します。
 
 ## ライセンス
 

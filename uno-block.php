@@ -1,7 +1,14 @@
 <?php
-/*
-Plugin Name: Uno Block
-*/
+/**
+ * Plugin Name: Uno Block
+ * Plugin URI: https://github.com/annrie/unomoon-block
+ * Description: UnoCSS-powered decorative heading blocks for the cielos theme.
+ * Version: 1.0.1
+ * Author: annrie
+ * Author URI: https://phantomoon.com
+ * License: MIT
+ * License URI: https://opensource.org/licenses/MIT
+ */
 
 //直接このファイルにアクセスされた場合は exit（セキュリティ対策）
 defined( 'ABSPATH' ) || exit;
